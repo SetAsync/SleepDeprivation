@@ -1,0 +1,227 @@
+<html>
+
+<head>
+    <title>SleepDepriviation</title>
+    <style>
+        body {
+            background-color: #c1b2ab;
+            padding: 5%;
+            font-size-adjust: 1;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 1%;
+        }
+
+        input {
+            background-color: #345995;
+            color: white;
+
+            padding: 0.6em 0.8em;
+            border: none;
+            border-radius: 6px;
+
+            font-size: 1em;
+
+            width: 40%;
+        }
+
+        button {
+            background-color: #C880B7;
+            border: 0px;
+            margin-top: 7px;
+            font-size-adjust: 1;
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        .data {
+            text-align: center;
+            text-shadow: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .stage {
+            background-color: #ede1da;
+            border: 5px;
+            border-color: #C880B7;
+            border-style: solid;
+            padding: 7px;
+            margin-bottom: 5px;
+        }
+
+        .stage-tocome {
+            background-color: #ff4f4f;
+            border: 5px;
+            border-color: #C880B7;
+            border-style: solid;
+            padding: 7px;
+            margin-bottom: 5px;
+            text-decoration: line-through;
+        }
+
+        .music {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 10px;
+        }
+
+        .music iframe {
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<section id="header">
+    <h1>SleepDepriviation</h1>
+    <p>This is not a good idea.</p>
+</section>
+
+<br>
+
+<section id="setup" style="display: none;">
+    <h2>When did you last wake up?</h2>
+    <input id="awoken-input" type="datetime-local"><br>
+    <button id="awoken-confirm">Confirm</button>
+</section>
+
+<section id="sleepdeprived" style="display: none;">
+    <h2>You've been awake for:</h2>
+    <h3 class="data" id="summary">2H : 30M : 5S</h3>
+    <hr>
+    <h2>Equivalent to:</h2>
+    <div class="data">
+        <h3 id="eq-d">...</h3>
+        <h3 id="eq-h">...</h3>
+        <h3 id="eq-m">...</h3>
+        <h3 id="eq-s">...</h3>
+    </div>
+    <hr>
+    <h2>The Stages:</h2>
+
+    <div class="stage" id="stage-1">
+        <h4>0-16 Hours - Mild Strain</h4>
+        <ul>
+            <li>This is a normal day.</li>
+            <li>Mild tiredness.</li>
+            <li>Should feel fine.</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-2">
+        <h4>16-20 Hours - Early Impairement</h4>
+        <ul>
+            <li>Attention and memory begin to drop.</li>
+            <li>Decision-making becomes impulsive.</li>
+            <li>Memory begins to drop.</li>
+            <li>Trouble focusing.</li>
+            <li>Memory starts to drop.</li>
+            <li>Overconfidence. And memory starts to drop.</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-3">
+        <h4>20-24 Hours - Mild Intoxication</h4>
+        <ul>
+            <li>Cognitive impairement comparable to 0.08% BAC. (Legally Drunk)</li>
+            <li>Tunnel vision thinking.</li>
+            <li>Slurred thoughts.</li>
+            <li>Difficulty learning.</li>
+            <li>Impulse to create random websites.</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-4">
+        <h4>24 - 30 Hours - Neurocognitive Decline</h4>
+        <ul>
+            <li>Attention unstable.</li>
+            <li>Microsleeps / Zoning Out</li>
+            <li>Errors in simple tasks.</li>
+            <li>Mood swings.</li>
+            <li>Physical clumsiness</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-5">
+        <h4>30 - 36 Hours - Perceptual Instability</h4>
+        <ul>
+            <li>Light sensitivity.</li>
+            <li>Sounds feel "too loud".</li>
+            <li>Anxiety Spikes</li>
+            <li>Strong emotional reactions.</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-6">
+        <h4>36 - 48 Hours - Hallucination Onset</h4>
+        <ul>
+            <li>REM intrustion into wakefullness.</li>
+            <li>Brain begins dreaming whilst awake.</li>
+            <li>Reality testing weakens.<br><i>I don't know what that means.</i></li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-7">
+        <h4>48 - 60 Hours - Severe Breakdown</h4>
+        <ul>
+            <li>Sustained attention impossible.</li>
+            <li>Memory encoding fails.</li>
+            <li>Lack of emotional depth/regulation.</li>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-8">
+        <h4>60 - 72 Hours - Psycosis Like State</h4>
+        <ul>
+            <li>Brain networks desynchronize</li>
+            <li>Delusions may form.</li>
+            <li>REM pressure becomes extreme.</li>
+            <li>Paranoia.</li>
+            <li>Loss of insight.</li><br><i>"Clinically indistinguishable from acute psychosis" apparantly.</i>
+        </ul>
+    </div>
+
+    <div class="stage" id="stage-9">
+        <h4>72 - 96 Hours - Medical Danger</h4>
+        <ul>
+            <li>Immune system suppression</li>
+            <li>Severe Confusion</li>
+            <li>Involuntary Microsleeps</li>
+        </ul>
+    </div>
+
+    <h4>If you have gone further than this, you are dead.</h4>
+    <hr>
+    <button id="resetbutton" style="width: 100%">
+        I've slept - reset.
+    </button>
+
+
+</section>
+<br>
+<section>
+    <p>I'm tired and bored - please don't attempt to test the stages presented on this site.</p><br>
+    <h5>Technical Notes</h5>
+    <ul>
+        <li>New visitors will be asked to select when they last awoke.</li>
+        <li>This value will be stored in your localStorage, so the stopwatch does not clear.</li>
+        <li>It will also be put into the URL so that it may be shared.</li>
+        <hr>
+        <li>Using a different URL with a different 't' parameter will overwrite your countdown.</li>
+        <li>You can clear a countdown at the bottom of the page.</li>
+    </ul>
+</section>
+
+<div class="music">
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/09OpntwPHuNICsyEt1ETpE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5TNX6rJ91T8PdEt94X50Y9?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<i>I can't find any more not-sleeping songs :(</i>
+</div>
+
+</html>
